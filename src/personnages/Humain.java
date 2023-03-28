@@ -45,7 +45,7 @@ public class Humain {
 		argent-=perte;
 		}
 	
-	protected void parler(String texte) {
+	public void parler(String texte) {
 		// Elle est privée car elle est utilisée uniquement pour
 		// factorisée du code d'autre méthode de la même classe 
 		// où elle est elle-même définie
