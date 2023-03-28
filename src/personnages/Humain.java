@@ -39,18 +39,13 @@ public class Humain {
 	
 	public void gagnerArgent(int gain) {
 		argent+=gain;
-		System.out.println(nom + " a gagné " + gain + " sous !");
 	}
 	
 	public void perdreArgent(int perte) {
-		if (perte > argent) {
-			System.out.println(nom + " n'a pas assez d'argent pour perdre " + perte + " sous !");
+		argent-=perte;
 		}
-		else {
-			argent-=perte;
-		}
-	}
-	private void parler(String texte) {
+	
+	protected void parler(String texte) {
 		// Elle est privée car elle est utilisée uniquement pour
 		// factorisée du code d'autre méthode de la même classe 
 		// où elle est elle-même définie
