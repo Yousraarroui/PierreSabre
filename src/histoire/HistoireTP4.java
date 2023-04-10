@@ -9,7 +9,7 @@ public class HistoireTP4 {
 	public static void main(String[] args) {
 		
 		
-		Humain prof = new Humain("Prof","kombucha",54);
+		//Humain prof = new Humain("Prof","kombucha",54);
 		//prof.direBonjour();
 		//prof.acheter("une boisson", 12);
 		//prof.boire();
@@ -17,22 +17,22 @@ public class HistoireTP4 {
 		//prof.acheter("un kimono", 50);
 		
 		
-		Commercant marco = new Commercant("Marco","thé",15);
+		//Commercant marco = new Commercant("Marco","thé",15);
 		//marco.direBonjour();
 		//marco.seFaireExtorquer();
 		//marco.recevoir(15);
 		//marco.boire();
 		
-		//Yakuza yaku = new Yakuza("Yaku Le Noir", "whisky", 30,"Warsong");
+		Yakuza yaku = new Yakuza("Yaku Le Noir", "whisky", 45,"Warsong");
 		//yaku.direBonjour();
 		//yaku.parler("Tiens, tiens, ne serait-ce pas un faible marchant qui passe par là ?");
 		//yaku.parler(marco.getNom() + ", si tu tiens à la vie donne ta bourse !");
 		//yaku.extorquer(marco);
 		
-		Ronin roro = new Ronin("Roro", "shochu", 60);
-		roro.direBonjour();
-		roro.donner(marco);
-		
-		
+		Ronin roro = new Ronin("Roro", "shochu", 54);
+		//roro.direBonjour();
+		//roro.donner(marco);
+	
+		roro.provoquer(yaku);
 	}
 }
