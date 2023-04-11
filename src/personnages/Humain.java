@@ -28,6 +28,11 @@ public class Humain {
 		return argent;
 	}
 	
+	public String getBoissonPreferee() {
+		return boissonPreferee;
+	}
+	
+	
 	public void direBonjour() {
 		parler("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boissonPreferee + ". ");
 	}

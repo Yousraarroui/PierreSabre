@@ -10,6 +10,12 @@ public class Yakuza extends Humain{
 		this.reputation = 0;
 	}
 	
+	@Override
+	public void direBonjour() {
+		parler("Bonjour ! Je m'appelle " + getNom() + " et j'aime boire du " + getBoissonPreferee() + ". ");
+		parler(getNom() + " : Mon clan est celui de " + clan + ".");
+	}
+	
 	public void extorquer(Commercant victime) {
 		int argentCommercant = victime.getArgent();
 		int argentYakuza = getArgent();
@@ -17,7 +23,6 @@ public class Yakuza extends Humain{
 		reputation ++;
 		parler("J'ai piqué les " +  argentCommercant + " sous de " + victime.getNom() + ", ce qui me fait " + argentYakuza + " sous dans ma poche. Hi ! Hi !");
 	}
-	
 	
 	public int getReputation() {
 		return reputation;
