@@ -1,4 +1,4 @@
-package histoire;
+package personnages;
 
 import personnages.Ronin;
 
