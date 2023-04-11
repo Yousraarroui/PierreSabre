@@ -13,7 +13,7 @@ public class Yakuza extends Humain{
 	@Override
 	public void direBonjour() {
 		parler("Bonjour ! Je m'appelle " + getNom() + " et j'aime boire du " + getBoissonPreferee() + ". ");
-		parler(getNom() + " : Mon clan est celui de " + clan + ".");
+		parler("Mon clan est celui de " + clan + ".");
 	}
 	
 	public void extorquer(Commercant victime) {

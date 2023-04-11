@@ -32,7 +32,6 @@ public class Humain {
 		return boissonPreferee;
 	}
 	
-	
 	public void direBonjour() {
 		parler("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boissonPreferee + ". ");
 	}
@@ -83,6 +82,7 @@ public class Humain {
 		direBonjour();
 		this.memoriser(humain);
 	}
+	
 	public void listerConnaissance() {
 		System.out.println("Je connais beaucoup de monde dont : ");
 		for (int i = 0; i < nbConnaissances ; i++) {
