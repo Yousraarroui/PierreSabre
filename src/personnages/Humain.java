@@ -1,14 +1,23 @@
 package personnages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Humain {
 	private String nom;
-	private String boissonPréférée;
+	private String boissonPreferee;
 	private int argent;
+	private Humain[] connaissances;
+	private int nbConnaissances ;
 	
-	public Humain(String nom, String boissonPréférée, int argent) {
+	
+	public Humain(String nom, String boissonPreferee, int argent) {
 		this.nom = nom;
-		this.boissonPréférée = boissonPréférée;
+		this.boissonPreferee = boissonPreferee;
 		this.argent = argent;
+		this.connaissances = new Humain[30];
+		this.nbConnaissances = 0;
+		
 	}
 	
 	public String getNom() {
@@ -20,11 +29,11 @@ public class Humain {
 	}
 	
 	public void direBonjour() {
-		parler("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boissonPréférée + ". ");
+		parler("Bonjour ! Je m'appelle " + nom + " et j'aime boire du " + boissonPreferee + ". ");
 	}
 	
 	public void boire() {
-		parler("Mmmm, un bon verre de " + boissonPréférée + " ! GLOUPS !");
+		parler("Mmmm, un bon verre de " + boissonPreferee + " ! GLOUPS !");
 	}
 	
 	public void acheter(String bien, int prix) {
@@ -37,18 +46,42 @@ public class Humain {
 		}
 	}
 	
-	public void gagnerArgent(int gain) {
+	protected void gagnerArgent(int gain) {
 		argent+=gain;
 	}
 	
-	public void perdreArgent(int perte) {
+	protected void perdreArgent(int perte) {
 		argent-=perte;
 		}
 	
-	public void parler(String texte) {
+	protected void parler(String texte) {
 		// Elle est privée car elle est utilisée uniquement pour
 		// factorisée du code d'autre méthode de la même classe 
 		// où elle est elle-même définie
 		System.out.println(nom + " : " + texte);
+	}
+	
+	public void faireConnaissanceAvec(Humain autreHumain) {
+		direBonjour();
+		autreHumain.repondre(this);
+		this.memoriser(autreHumain);
+	}
+	
+	private void memoriser(Humain humain) {
+		if (nbConnaissances < connaissances.length) {
+			connaissances[nbConnaissances] = humain;
+			nbConnaissances++;
+		}
+	}
+	
+	private void repondre(Humain humain) {
+		direBonjour();
+		this.memoriser(humain);
+	}
+	public void listerConnaissance() {
+		System.out.println("Je connais beaucoup de monde dont : ");
+		for (int i = 0; i < nbConnaissances ; i++) {
+			System.out.println(connaissances[i].nom);
+		}
 	}
 }
